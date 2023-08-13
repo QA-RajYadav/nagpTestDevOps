@@ -14,6 +14,11 @@ public class TestCalculatorService {
 	}
 
 	@Test
+	public void testSubtract() {
+		assertEquals(10, CalculatorService.subtract(20, 10));
+	}
+
+	@Test
 	public void testNull() {
 		assertEquals(0, CalculatorService.add(0,0));
 	}
