@@ -38,13 +38,13 @@ pipeline {
             }
         }
 
-// 	stage("Quality gate") {
-//                 steps {
-//                     script {
-//                         waitForQualityGate abortPipeline: true
-//                     }
-//                 }
-//                 }
+	stage("Quality Gate") {
+                steps {
+                  timeout(time: 300, unit: 'SECONDS') {
+                    waitForQualityGate abortPipeline: true
+                  }
+                }
+              }
             }
     post {
         
