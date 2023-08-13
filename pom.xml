@@ -11,15 +11,17 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- Update Maven Version -->
+        <maven.version>3.8.4</maven.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -27,17 +29,18 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
-
     </dependencies>
+
     <build>
         <plugins>
+            <!-- Update jacoco-maven-plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version>
+                <version>0.8.9</version>
                 <executions>
                     <execution>
                         <goals>
@@ -53,16 +56,15 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- Update maven-pmd-plugin -->
             <plugin>
-
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.21.0</version>
-
+                <version>3.15.0</version>
                 <configuration>
                     <includeTests>true</includeTests>
                     <minimumTokens>10</minimumTokens>
-                    <targetJdk>11</targetJdk>
+                    <targetJdk>17</targetJdk>
                     <rulesets>
                         <ruleset>/category/java/bestpractices.xml</ruleset>
                         <ruleset>/category/java/codestyle.xml</ruleset>
@@ -78,16 +80,13 @@
                     </execution>
                 </executions>
             </plugin>
-
+            <!-- Update sonar-maven-plugin -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.7.0.1746</version>
+                <version>3.9.0.2155</version>
             </plugin>
         </plugins>
-
         <finalName>calcwebapp</finalName>
     </build>
-
-
 </project>
