@@ -39,14 +39,12 @@ pipeline {
         }
 
 	stage("Quality gate") {
-            steps {
-            waitForQualityGate('Sonar way'){
-                          waitForQualityGate abortPipeline: true
-
+                steps {
+                    script {
+                        waitForQualityGate abortPipeline: true
+                    }
+                }
             }
-        }
-        
-    }
     post {
         
         success {
