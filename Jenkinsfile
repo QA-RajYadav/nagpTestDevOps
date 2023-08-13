@@ -40,8 +40,8 @@ pipeline {
 
 	stage("Quality gate") {
             steps {
-            waitForQualityGate id: 'Sonar way',
-                waitForQualityGate abortPipeline: true,
+            waitForQualityGate('Sonar way'){
+                          waitForQualityGate abortPipeline: true
 
             }
         }
