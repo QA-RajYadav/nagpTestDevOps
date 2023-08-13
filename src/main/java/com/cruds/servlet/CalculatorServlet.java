@@ -1,7 +1,6 @@
 package com.cruds.servlet;
 
 import com.cruds.service.CalculatorService;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +19,6 @@ public class CalculatorServlet extends HttpServlet {
      */
     public CalculatorServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     /**
@@ -53,8 +51,6 @@ public class CalculatorServlet extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         request.setAttribute("RESULT", String.valueOf(result));
         rd.forward(request, response);
-
-
     }
 
 }

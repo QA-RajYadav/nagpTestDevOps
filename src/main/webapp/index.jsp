@@ -1,32 +1,26 @@
-<html>
-	<head>	
-			<title>CalCulatorApp</title>
-	</head>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title>CalCulatorApp</title>
+</head>
 <body>
-<h2>Calculator</h2>
-	
-	<h3>Build Triggered on 22 Feb 2023!!!</h3>
+    <h2>Calculator</h2>
 
+    <h3>Build Triggered on 13 Aug 2023!!!</h3>
 
-<%
-	String strResult = (String) request.getAttribute("RESULT");
-%>
+    <c:set var="strResult" value="${requestScope.RESULT}" />
 
-<form action="CalculatorServlet" method="post">
+    <form action="CalculatorServlet" method="post">
+        <input type="text" name="num1" /> <label>+</label>
+        <input type="text" name="num2" /> <label>=</label>
 
-	<input type="text" name="num1" /> <label>+</label>
-	<input type="text" name="num2" /> <label>=</label>
-	<%
-		if(strResult != null){
-	%>
-	     <p> The result is <%= strResult %>  </p>
-	<%
-		}
-	%>
-	<br/>
-	<input type="submit" value="Calculate"/>
+        <c:if test="${not empty strResult}">
+            <p> The result is ${strResult} </p>
+        </c:if>
 
-</form>
-
+        <br/>
+        <input type="submit" value="Calculate"/>
+    </form>
 </body>
 </html>
