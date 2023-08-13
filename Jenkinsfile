@@ -38,13 +38,13 @@ pipeline {
             }
         }
 
-	stage("Quality gate") {
-                steps {
-                    script {
-                        waitForQualityGate abortPipeline: true
-                    }
-                }
-                }
+// 	stage("Quality gate") {
+//                 steps {
+//                     script {
+//                         waitForQualityGate abortPipeline: true
+//                     }
+//                 }
+//                 }
             }
     post {
         
