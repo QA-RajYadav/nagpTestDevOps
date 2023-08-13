@@ -60,8 +60,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.15.0</version>
+                <version>3.21.0</version>
                 <configuration>
+                    <linkXRef>false</linkXRef>
                     <includeTests>true</includeTests>
                     <minimumTokens>10</minimumTokens>
                     <targetJdk>17</targetJdk>
